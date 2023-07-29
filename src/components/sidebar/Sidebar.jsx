@@ -39,7 +39,7 @@ export const Sidebar = () => {
         <NavLink
           style={navStyles}
           className="side-nav"
-          to="/bookmarks"
+          to="/playlists"
         >
           <i className="fa-regular fa-bookmark "></i>{" "}
           <span className="nav-title">

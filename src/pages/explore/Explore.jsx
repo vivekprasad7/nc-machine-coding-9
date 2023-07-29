@@ -3,9 +3,11 @@ import "./Explore.css"
 import { Sidebar } from '../../components/sidebar/Sidebar'
 import { useAppContext } from '../../contexts/AppContext'
 import { isVideoInWatchLater } from '../../utils/isVideoInWatchLater'
+import { useNavigate } from 'react-router-dom'
 
 export const Explore = () => {
     const {state, dispatch, videosData} = useAppContext();
+    const navigate = useNavigate();
 
     const filterCategoryVideos = state.category === "All" ? videosData : videosData.filter((item) => item.category === state.category);
 
@@ -21,7 +23,7 @@ export const Explore = () => {
 
                 return(
                     <div className='video-card' >
-                        <img src={video.thumbnail} alt={video.title}/>
+                        <img  onClick={ () => navigate(`/video/${video?._id}`)} src={video.thumbnail} alt={video.title}/>
                         <p>{video.title}</p>
                         <p>Creator: {video.creator}</p>
                         <p>Views: {video.views}</p>

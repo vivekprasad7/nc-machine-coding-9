@@ -5,8 +5,8 @@ import { Explore } from './pages/explore/Explore';
 import { Playlists } from './pages/playlists/Playlists';
 import { WatchLater } from './pages/watchLater/WatchLater';
 import { SinglePlaylist } from './pages/singlePlaylist/SinglePlaylist';
-import { SingleVideo } from './pages/singleVideo/SingleVideo';
 import { SingleCategoryListing } from './pages/SingleCategoryListing/SingleCategoryListing';
+import { SingleVideoPage } from './pages/singleVideoPage/SingleVideoPage';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       <Route path="/playlists" element={<Playlists/>}/>
       <Route path="/later" element={<WatchLater/>}/>
       <Route path="/category" element={<SingleCategoryListing/>}/>
-      <Route path="/video" element={<SingleVideo/>}/>
+      <Route path="/video/:videoID" element={<SingleVideoPage/>}/>
       <Route path="/playlist" element={<SinglePlaylist/>}/>
      </Routes>
     </div>

@@ -16,6 +16,9 @@ export const AppContextProvider = ({children}) => {
         videos:[],
         category:"All",
         watchLater:[],
+        playlistData:[],
+        openPlaylistModal:false,
+        openEditModal:false,
     }
 
     const [ state, dispatch] = useReducer(reducer, initialState)

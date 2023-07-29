@@ -1,0 +1,29 @@
+.right-sidebar{
+    flex:0.25;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-nav-video{
+    display: flex;
+    margin:5px;
+}
+
+
+.right-nav-video img{
+    width:120px;
+    height: 120px;
+}
+
+
+.vid-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.vid-details p{
+    margin:3px;
+}
