@@ -1,0 +1,10 @@
+.navbar{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    display: flex;
+    border-bottom: solid 1px rgb(181, 181, 181);
+    height: fit-content;
+
+}
