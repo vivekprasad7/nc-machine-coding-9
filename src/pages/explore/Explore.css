@@ -1,0 +1,73 @@
+.explore-page{
+    display:flex;
+}
+
+.videos-section{
+    flex:0.725;
+}
+
+.videos-listing-section{
+    /* flex:0.725; */
+    display: flex;
+    gap:1rem;
+    flex-wrap: wrap;
+}
+
+.video-card{
+    border:solid 1px gray;
+    border-radius: 10px;
+    padding:0.1rem 0.7rem;
+    cursor: pointer;
+    margin: 1rem;
+    width:300px;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+
+
+
+.pc-edit-icon{
+    position:absolute;
+    cursor: pointer;
+    z-index: 100;
+    bottom:20px;
+    right:20px;
+}
+
+.pc-dropdown{
+    margin: 0px;
+    padding:0px;
+    list-style: none;
+    position: absolute;
+    top:1rem;
+    left:0.1rem;
+    width: 150px;
+    padding:15px;
+    border-radius: 15px;
+    background-color: #fff;
+    border: solid 1px gray;
+    z-index: 100;
+}
+
+
+
+
+
+.pc-dropdown{
+    display: none;
+}
+
+.pc-dropdown li{
+    padding: 0.5rem;
+    padding-left: 15px;
+}
+
+.pc-edit-icon:hover  .pc-dropdown{
+    display: block;
+
+}
+
+.fa, .fa-solid, .fa-sharp , .fa-regular{
+    cursor: pointer;
+}

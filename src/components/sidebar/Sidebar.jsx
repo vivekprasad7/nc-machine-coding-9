@@ -1,8 +1,11 @@
 import React from 'react'
 import "./Sidebar.css"
 import { NavLink } from 'react-router-dom'
+import { useAppContext } from '../../contexts/AppContext'
 
 export const Sidebar = () => {
+
+    const {dispatch} = useAppContext();
 
 
     const navStyles = ({isActive}) => ({
@@ -27,7 +30,8 @@ export const Sidebar = () => {
         <NavLink
           style={navStyles}
           className="side-nav"
-          to="/explore"
+          onClick={() => dispatch({type:"FILTER_BY_CATEGORY" , payload: "All"})}
+          to="/videos"
         >
           <i className="fa-regular fa-compass"></i>{" "}
           <span className="nav-title">Explore</span>

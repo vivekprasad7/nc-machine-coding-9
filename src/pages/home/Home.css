@@ -5,3 +5,18 @@
 .home-categories{
     flex:0.725;
 }
+
+.category-card{
+    border:solid 1px gray;
+    border-radius: 8px;
+    display: inline-block;
+    padding:0.1rem 0.7rem;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+/* .category-card img{
+    width:280px;
+    object-fit: contain;
+
+} */

@@ -1,11 +1,31 @@
-const { createContext, useContext } = require("react");
+import { categories } from "../api/categoriesData";
+import { videos } from "../api/videosData";
+import { reducer } from "../reducers/reducer";
+
+const { createContext, useContext, useReducer, useState } = require("react");
 
 const AppContext = createContext();
  
 export const AppContextProvider = ({children}) => {
-    
-    return <AppContext.Provider value={{
 
+    const [categoriesData, setCategoriesData] = useState(categories);
+    const [videosData, setVideosData] = useState(videos);
+
+    const initialState = {
+        categories:[],
+        videos:[],
+    }
+
+    const [ state, dispatch] = useReducer(reducer, initialState)
+
+
+
+
+    return <AppContext.Provider value={{
+        categoriesData,
+        videosData,
+        state,
+        dispatch,
     }}>{children}</AppContext.Provider>
 }
 
