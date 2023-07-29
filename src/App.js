@@ -16,7 +16,7 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/videos" element={<Explore/>}/>
       <Route path="/playlists" element={<Playlists/>}/>
-      <Route path="/watch-later" element={<WatchLater/>}/>
+      <Route path="/later" element={<WatchLater/>}/>
       <Route path="/category" element={<SingleCategoryListing/>}/>
       <Route path="/video" element={<SingleVideo/>}/>
       <Route path="/playlist" element={<SinglePlaylist/>}/>
