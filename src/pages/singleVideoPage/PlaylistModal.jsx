@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useAppContext } from '../../contexts/AppContext'
 import { Box, Modal, TextField } from '@mui/material';
 
@@ -16,6 +16,8 @@ const style = {
 
 export const PlaylistModal = ({video}) => {
 
+
+
     const { state, dispatch} = useAppContext();
 
     const playlistInitialData = {
@@ -23,11 +25,13 @@ export const PlaylistModal = ({video}) => {
         playlistDesc:"",
     }
 
-    const [newPlaylistInput, setNewPlaylistInput] = useState(playlistInitialData)
+    const [newPlaylistData, setNewPlaylistData] = useState(playlistInitialData)
 
     const closeHandler = () => dispatch({type:"CLOSE_PLAYLIST_MODAL"})
 
-
+    if (!video) {
+        return null;
+    } else
   return (
     <div className='playlist-modal'>
         <Modal
@@ -36,62 +40,8 @@ export const PlaylistModal = ({video}) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         >
-            <Box sx={style}>
-                <h2>Add to Playlist</h2>
-                <p>Create New Playlist</p>
-                <TextField
-                id="outlined-basic"
-                onChange={
-                    (e) => setNewPlaylistInput({
-                        ...newPlaylistInput, playlistName: e.target.value
-                    })
-                }
-                variant="outlined"
-                sx={{width:"100%", margin:"12px 0"}}
-                />
-                    <button
-                    onClick={() => {
-                        dispatch({
-                            type:"ADD_NEW_PLAYLIST",
-                            playlistName: newPlaylistInput?.playlistName,
-                        });
-                        setNewPlaylistInput(playlistInitialData)
-                    }}
-                    >
-                        Create New Playlist
-                    </button>
-                    {
-                        !show && (
-                            <>
-                            <p>Add to Existing Playlist</p>
-                            <ol>
-                                {
-                                    state?.playlistData?.map((item) => {
+            
 
-                                        return(
-                                            <>
-                                            <li><p>{item?.playlistName}</p></li>
-                                             <button
-                                            onClick={() => dispatch({
-                                                type:"ADD_TO_PLAYLIST",
-                                                playlistVideos: {...video},
-                                                pID:item?.playlistID,
-                                            })}
-                                            >
-                                                Add
-                                           </button>
-                                           </>
-                                        )
-                                    })
-                                }
-                            </ol>
-                            </>
-                        )
-                    }
-
-                </TextField>
-
-            </Box>
         </Modal>
 
 

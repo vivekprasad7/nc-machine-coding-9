@@ -17,8 +17,9 @@ export function reducer(state, action){
             ...state, playlistData : [
                 ...state?.playlistData,
                 {
-                    pID: uuid(),
+                    playlistID: uuid(),
                     playlistName:action?.playlistName,
+                    playlistDesc:action?.playlistDesc,
                     playlistVideos:[],
                 }
             ]
